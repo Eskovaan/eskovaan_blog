@@ -1,0 +1,39 @@
+
+<%- include("partials/navbar.ejs") %>
+<div class="con-gradient-background">
+    <div class="con-title">
+        <h1>💣 ESKOVAAN BLOG 💣</h1>
+    </div>
+    
+    <% if (messages.length > 0) { %> <!-- Check if there are any messages -->
+        <% messages.forEach((message) => { %>
+            <div class="con-post">
+                <div class="con-nametime">
+                    <p>By: <%= message.name %></p>
+                    <p><%= message.time %></p>
+                </div>
+                <h2><%= message.header %></h2>
+
+                <div id="message-content-<%= message.id %>" style="display: none;" class="con-message">
+                    <p><%- message.message %></p>
+                </div>
+                <div class="con-buttons">
+                    <div class="con-buttonbox1">
+                        <button class="button-message" data-id="<%= message.id %>">Show Message</button>
+                    </div>
+                    <form action="/delete-post" method="POST" class="con-buttonbox2">
+                        <input type="hidden" name="id" value="<%= message.id %>">
+                        <button type="submit">Delete Post</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h2>No messages yet!</h2>
+    <% } %>
+    <a id="new-post"></a> <!-- Anchor element for scrolling to the new post -->
+</div>
+<%- include("partials/footer.ejs") %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/scripts.js"></script>

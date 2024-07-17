@@ -1,0 +1,69 @@
+
+.foo-allcontainer {
+    display: flex;
+    flex-direction:column;
+    background-color: black;
+    align-items: center;
+    color: white;
+}
+
+.foo-boxcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.foo-box {
+    display: flex;
+    flex-direction:column;
+    width: 190px;
+    padding: 30px 5px 30px 5px;
+}
+
+.foo-box h2 {
+    margin: 0px;
+    padding: 0px 0px 15px 15px;
+    border-left: solid 2px white;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+}
+
+.foo-box p {
+    margin: 0px;
+    padding-top: 5px;
+    border-left: solid 2px white;
+    padding-left: 15px;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.foo-list ul {
+    padding-left: 15px;
+    margin: 0px;
+    border-left: solid 2px white;
+}
+
+.foo-list li {
+    padding-top: 8px;
+    list-style: none;
+}
+
+.foo-list a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+}
+
+.foo-list a:hover {
+	color: orange;
+	text-decoration: underline;
+}
+
+.foo-created {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.foo-created {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}

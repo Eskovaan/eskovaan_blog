@@ -1,0 +1,22 @@
+<%- include("partials/navbar.ejs") %>
+
+<div class="new-gradient-background">
+    <div class="new-title">
+        <h1>✏️ NEW POST ✏️</h1>
+    </div>
+
+    <form action="/message" method="POST" class="new-postbox">
+        <h3>Name</h3>
+        <input name="name" type="text" class="new-namebox" placeholder="Name" />
+        <h3>Header</h3>
+        <input name="header" type="text" class="new-headerbox" placeholder="Header" />
+        <h3>Message</h3>
+        <textarea name="text" class="new-messagebox" placeholder="Message"></textarea>
+        <div class="new-buttonbox">
+            <input type="submit" value="Send Post"/>
+        </div>
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %>

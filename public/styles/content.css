@@ -1,0 +1,209 @@
+
+body {
+    margin: 0px;
+    font-family: Georgia, serif;
+}
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+/* index.ejs */
+
+.con-gradient-background {
+    background: linear-gradient(135deg, #070000, #6caeef, #030703);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.con-title h1 {
+    font-size: clamp(1.45rem, 3vw, 3rem);
+    margin: 90px 0px 30px 0px;
+}
+
+.con-post {
+    background-color: #f8f5de;
+    background-image: linear-gradient(to right, rgba(255,210,0,0.4), rgba(200, 160, 0, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(200, 160, 0, 0.1) 65%);
+    box-shadow: inset 0 0 75px rgba(255,210,0,0.3), inset 0 0 20px rgba(255,210,0,0.4), inset 0 0 30px rgba(220,120,0,0.8);
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: max(300px, 60%);
+    margin-bottom: 20px;
+    border-radius: 0.75rem;
+}
+
+.con-nametime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 15px 0px 0px 0px;
+}
+
+.con-post h2 {
+    text-align: center;
+    font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+    font-family: "Indie Flower", cursive;
+    margin: 0px 30px 0px 30px;
+    text-decoration: underline solid black 2px;
+}
+
+.con-message {
+    width: 90%;
+}
+
+.con-nametime p {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    margin: 0px 15px 0px 15px;
+}
+
+.con-message p {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+}
+
+.con-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0px;
+}
+
+.con-buttonbox1, .con-buttonbox2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(120px, 20%, 160px);
+    margin: 15px;
+}
+
+.con-buttons button {
+    height: 100%;
+    width: 100%;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 0.75rem;
+    padding: 5px 0px 5px 0px;
+    border-top: none;
+    border-left: none;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    box-shadow: 2px 2px 5px rgb(45, 45, 45);
+}
+
+.con-buttonbox1 button:hover {
+    background-color: rgb(51, 208, 51);
+    color: black;
+}
+
+.con-buttonbox2 button:hover {
+    background-color: orangered;
+    color: black;
+}
+
+
+/* newmessage.ejs */
+
+.new-gradient-background {
+    background: linear-gradient(135deg, #070000, #419066, #030703);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.new-title h1 {
+    font-size: clamp(1.45rem, 3vw, 3rem);
+    margin: 90px 0px 30px 0px;
+}
+
+.new-postbox {
+    background-color: #f8f5de;
+    background-image: linear-gradient(to right, rgba(255,210,0,0.4), rgba(200, 160, 0, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(200, 160, 0, 0.1) 65%);
+    box-shadow: inset 0 0 75px rgba(255,210,0,0.3), inset 0 0 20px rgba(255,210,0,0.4), inset 0 0 30px rgba(220,120,0,0.8);
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: max(300px, 60%);
+    margin-bottom: 20px;
+    border-radius: 0.75rem;
+}
+
+.new-postbox h3 {
+    font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+    margin: 20px 0px 10px 0px;
+}
+
+.new-namebox {
+    width:  clamp(155px, 26%, 245px);
+    font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+    font-family: inherit;
+}
+.new-headerbox {
+    width:  clamp(200px, 33%, 320px);
+    font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+    font-family: inherit;
+}
+
+.new-messagebox {
+    width:  80%;
+    height: 20vh;
+    font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+    font-family: inherit;
+}
+
+.new-buttonbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(120px, 20%, 160px);
+    margin: 15px;
+}
+
+.new-buttonbox input {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 87, 0);
+    color: white;
+    border-radius: 0.75rem;
+    padding: 5px 0px 5px 0px;
+    border-top: none;
+    border-left: none;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    box-shadow: 2px 2px 5px rgb(45, 45, 45);
+}
+
+.new-buttonbox input:hover {
+    background-color: rgb(51, 208, 51);
+    color: black;
+}
