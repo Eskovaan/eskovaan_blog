@@ -6,10 +6,18 @@ let messages = [];
 let index = 0;
 
 // Add a new message
-export function addMessage(person, header, message, time) {
+export function addMessage(person, header, message) {
+    const { formattedString, dateObject } = getFormattedDateTime();
     // Replace all newlines with HTML <br> tags
     const formattedMessage = message.replace(/\n/g, '<br>');
-    messages.push({id: index, name: person, header: header, message: formattedMessage, time: time});
+    messages.push({
+        id: index,
+        name: person,
+        header: header,
+        message: formattedMessage,
+        time: formattedString,
+        dateObject: dateObject // Store the date object for sorting
+    });
     index ++;
 }
 
@@ -18,9 +26,9 @@ export function deletePostById(id) {
     messages = messages.filter(message => message.id !== id);
 }
 
-// Retrieve all messages
+// Retrieve all messages, sorted by date
 export function getMessages() {
-    return messages;
+    return messages.sort((a, b) => a.dateObject - b.dateObject);
 }
 
 // Add a random message from a JSON file
@@ -37,12 +45,14 @@ export function randomMessage() {
             // Parse the JSON data, pick a random message
             const data = JSON.parse(rdata);
             const randomMessageInd = Math.floor(Math.random() * data.length);
+            const { formattedString, dateObject } = getFormattedDateTime();
             const randomMessage = { 
                 id: index,
                 name: data[randomMessageInd].name,
                 header: data[randomMessageInd].header,
                 message: data[randomMessageInd].message,
-                time: getFormattedDateTime()
+                time: formattedString,
+                dateObject: dateObject
             };
             
             index++;
@@ -52,3 +62,17 @@ export function randomMessage() {
     });
 }
 
+// Update a message by its `id`
+export function updateMessageById(id, name, header, message) {
+    const { formattedString, dateObject } = getFormattedDateTime();
+    const index = messages.findIndex(msg => msg.id === id); // Find the index of the message with the given ID
+    if (index !== -1) {
+        messages[index].name = name;
+        messages[index].header = header;
+        messages[index].message = message.replace(/\n/g, '<br>');
+        messages[index].time = formattedString;
+        messages[index].dateObject = dateObject;
+        return true;
+    }
+    return false;
+}

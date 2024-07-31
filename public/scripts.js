@@ -20,10 +20,12 @@ $(document).ready(function() {
     if (window.location.hash === '#new-post') {
         const newPostElement = document.getElementById('new-post');
         newPostElement.scrollIntoView(false);
+        // Remove the hash from the URL after scrolling
+        history.replaceState(null, null, ' ');
     }
 
     // Handle delete post without reloading the page
-    $("form.con-buttonbox2").on("submit", function(event) {
+    $("form.con-buttonbox3").on("submit", function(event) {
         event.preventDefault(); // Prevent the form from submitting the traditional way
 
         const form = $(this); // Store reference to the current form

@@ -1,0 +1,21 @@
+<%- include("partials/navbar.ejs") %>
+
+<div class="edi-gradient-background">
+    <div class="new-title">
+        <h1>🛠️ EDIT POST 🛠️</h1>
+    </div>
+
+    <form action="/edit-message/<%= message.id %>?_method=PATCH" method="POST" class="new-postbox">
+        <h3>Name</h3>
+        <input name="name" type="text" class="new-namebox" value="<%= message.name %>" />
+        <h3>Header</h3>
+        <input name="header" type="text" class="new-headerbox" value="<%= message.header %>" />
+        <h3>Message</h3>
+        <textarea name="text" class="new-messagebox"><%= message.message.replace(/<br>/g, '\n') %></textarea>
+        <div class="new-buttonbox">
+            <input type="submit" value="Update Post"/>
+        </div>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

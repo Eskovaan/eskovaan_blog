@@ -21,7 +21,11 @@
                     <div class="con-buttonbox1">
                         <button class="button-message" data-id="<%= message.id %>">Show Message</button>
                     </div>
-                    <form action="/delete-post" method="POST" class="con-buttonbox2">
+                    <form action="/edit-message" method="GET" class="con-buttonbox2">
+                        <input type="hidden" name="id" value="<%= message.id %>">
+                        <button type="submit">Edit Post</button>
+                    </form>
+                    <form action="/delete-post" method="POST" class="con-buttonbox3">
                         <input type="hidden" name="id" value="<%= message.id %>">
                         <button type="submit">Delete Post</button>
                     </form>

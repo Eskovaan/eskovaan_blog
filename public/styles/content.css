@@ -89,7 +89,7 @@ body {
     margin: 0px;
 }
 
-.con-buttonbox1, .con-buttonbox2 {
+.con-buttonbox1, .con-buttonbox2, .con-buttonbox3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,15 +120,30 @@ body {
 }
 
 .con-buttonbox2 button:hover {
+    background-color: rgb(248, 248, 37);
+    color: black;
+}
+
+.con-buttonbox3 button:hover {
     background-color: orangered;
     color: black;
 }
 
 
-/* newmessage.ejs */
+/* newmessage.ejs + editmessage.ejs */
 
 .new-gradient-background {
     background: linear-gradient(135deg, #070000, #419066, #030703);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.edi-gradient-background {
+    background: linear-gradient(135deg, #070000, #93933c, #030703);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
     min-height: 100vh;

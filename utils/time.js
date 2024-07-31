@@ -16,6 +16,9 @@ export function getFormattedDateTime() {
     const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
     const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
 
-    // Return the formatted date and time as a string in the format DD.MM.YYYY HH:MM:SS
-    return `${formattedDay}.${formattedMonth}.${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+    // Return an object containing the formatted date as a string and the original Date object
+    return {
+        formattedString: `${formattedDay}.${formattedMonth}.${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds}`,
+        dateObject: date
+    };
 }
